@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+  <head>
+    
+    
+    <title>Analise da Mega-Sena</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet"/>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   
+              
+  </head>
+
+  <body>
+  
+   
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Estudo dos resultados da Mega-Sena</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><h:link value="Registrar Resultados" outcome="pageboot-insert" /></li>
+            <li><h:link value="Consultar Resultados" outcome="pageboot-list" /></li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+      	     	
+      		<br></br>
+      		<br></br>
+      		<br></br>
+      		     	      	
+        	<h1>MEGA-SENA</h1>
+        
+        	<p class="lead">O objetivo desse aplicativo é ajudar no acerto dos resultados da  Mega-Sena.</p>
+        
+       		<h:form>	
+                	
+  			<h:panelGrid columns="2">
+									
+			<h:outputLabel value="Informe a Data inicial para selecao dos numeros mais sorteados:" />
+							
+			<h:panelGroup>
+									
+			<h:inputText id="dataInicioAnalise" size="10" value="#{analiseBean.analise.dataInicioAnalise}"
+						 label="Data" 
+						 disabled="false"
+						 required="true"
+						 requiredMessage="Data de selecao inicial  é obrigatorio"
+						 
+						 />
+			
+			</h:panelGroup>
+    	    			
+			<h:outputLabel value="Informe a data final para selecao dos numeros mais sorteados:" />
+				    				
+			<h:panelGroup>		
+			
+			<h:inputText id="dataFimAnalise" size="10" value="#{analiseBean.analise.dataFimAnalise}"
+						 label="Data" 
+						 disabled="false"
+						 required="true"
+						 requiredMessage="Data de selecao final é obrigatorio"
+						 />					
+		
+			</h:panelGroup>
+  	
+        	</h:panelGrid>
+
+			<h:commandButton value="Pesquisar" actionListener="#{analiseBean.executaAnaliseDosJogosApurados}"
+							 styleClass="btn btn-default"/>		
+							 
+				 
+        	
+        	<br></br>
+      		<br></br>
+      		<br></br>
+        	
+        	
+        	
+        	<span class="label label-primary">6 Numeros mais sorteados em azul</span><br></br><br></br>
+			<span class="label label-success">6 Numeros que mais são sorteados mas que ainda não sairam</span><br></br><br></br>
+			<span class="label label-danger">10 Numeros que menos sairam em todos os concursos</span><br></br><br></br>
+									
+			<table>
+  				<tr>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum01}">01</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum02}">02</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum03}">03</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum04}">04</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum05}">05</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum06}">06</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum07}">07</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum08}">08</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum09}">09</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum10}">10</span></h1></th>
+  				</tr>
+  				<tr>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum11}">11</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum12}">22</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum13}">13</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum14}">14</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum15}">15</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum16}">16</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum17}">17</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum18}">18</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum19}">19</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum20}">20</span></h1></th>
+  				</tr>
+  				<tr>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum21}">21</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum22}">22</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum23}">23</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum24}">24</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum25}">25</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum26}">26</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum27}">27</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum28}">28</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum29}">29</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum30}">30</span></h1></th>    				
+  				</tr>
+  				<tr>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum31}">31</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum32}">32</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum33}">33</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum34}">34</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum35}">35</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum36}">36</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum37}">37</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum38}">38</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum39}">39</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum40}">40</span></h1></th>
+  				</tr>
+  				<tr>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum41}">41</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum42}">42</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum43}">43</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum44}">44</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum45}">45</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum46}">46</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum47}">47</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum48}">48</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum49}">49</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum50}">50</span></h1></th>
+  				</tr>
+  				<tr>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum51}">51</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum52}">52</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum53}">53</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum54}">54</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum55}">55</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum56}">56</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum57}">57</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum58}">58</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum59}">59</span></h1></th>
+    				<th><h1><span class="#{analiseBean.analise.analiseNum60}">60</span></h1></th>
+  				</tr>
+  			</table>	
+        	        	        
+       </h:form>	
+        
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
+
+  </body>
+</html>

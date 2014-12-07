@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head><title>Numeros sorteados</title>
+<link href="./css/styles.css" 
+      rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<h:form>
+<h2>Numeros sorteados na Mega-Sena</h2>
+<h:messages layout="table" showSummary="true"
+	showDetail="false" globalOnly="true"
+	styleClass="msgErro" infoClass="msgInfo"
+	style="font-weight: bold"/>
+<h:dataTable var="scores" 
+             value="#{resultadoBean.listPessoas}"
+             border="1"
+             styleClass="tabela"
+             headerClass="cabecalhoTabela" 
+             rowClasses="linha1Tabela, linha2Tabela">
+  <h:column><f:facet name="header">Concurso</f:facet>#{scores.concurso}</h:column>
+  <h:column><f:facet name="header">Data</f:facet>#{scores.data}</h:column>
+  <h:column><f:facet name="header">R1</f:facet>#{scores.r1}</h:column>
+  <h:column><f:facet name="header">R2</f:facet>#{scores.r2}</h:column>
+  <h:column><f:facet name="header">R3</f:facet>#{scores.r3}</h:column>
+  <h:column><f:facet name="header">R4</f:facet>#{scores.r4}</h:column>
+  <h:column><f:facet name="header">R5</f:facet>#{scores.r5}</h:column>
+  <h:column><f:facet name="header">R6</f:facet>#{scores.r6}</h:column>
+  <h:column><f:facet name="header">Editar</f:facet>
+    <h:commandButton action="page-edit"> 
+          <f:setPropertyActionListener target="#{resultadoBean}" value="#{scores}" />
+          <h:graphicImage value="images/editar.png" title="Editar" styleClass="imagemLink"/>
+ 	</h:commandButton>
+  </h:column>  
+</h:dataTable>
+<br/>
+  <h:commandButton value="Incluir" action="page-insert" styleClass="botao"/>
+  <h:commandButton value="Refresh" action="page-list" styleClass="botao"/>
+  <h:commandButton value="Voltar" action="page-main" styleClass="botao"/>
+  
+</h:form>
+</h:body></html>

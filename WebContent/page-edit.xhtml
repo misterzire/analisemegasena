@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head><title>Alteração do Concurso Selecionado</title>
+ <link href="./css/styles.css" 
+      rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<div align="left">
+<h1>Edição</h1>
+<h:form>
+
+	<h:messages layout="table" showSummary="true"
+				showDetail="false" globalOnly="true"
+				styleClass="msgErro" infoClass="msgInfo"
+				style="font-weight: bold"/>
+  
+  <h:panelGrid columns="2">
+						
+		<h:outputLabel value="Concurso:" />
+							
+		<h:panelGroup>
+									
+		<h:inputText id="concurso" size="10"	value="#{resultadoBean.concurso}"
+						 label="numero do concurso" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="numero do concurso é um campo obrigatorio"
+                         converterMessage="numero do concurso aceita apenas numeros"/>
+			
+		</h:panelGroup>
+    	    			
+		<h:outputLabel value="Data:" />
+				    				
+		<h:panelGroup>		
+			
+		<h:inputText id="data" size="10" value="#{resultadoBean.data}"
+						 label="Data" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="A data é obrigatorio"/>					
+		
+		</h:panelGroup>
+  		  				
+		<h:outputLabel value="R1:" />
+		
+		<h:panelGroup>		
+			
+		<h:inputText id="r1" size="10" value="#{resultadoBean.r1}"
+						 label="Primeiro numero sorteado" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="R1 é obrigatorio"/>					
+		
+		</h:panelGroup>
+  		
+		
+		<h:outputLabel value="R2:" />
+		
+		<h:panelGroup>		
+			
+		<h:inputText id="r2" size="10" value="#{resultadoBean.r2}"
+						 label="Segundo numero sorteado" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="R2 é obrigatorio"/>					
+		
+		</h:panelGroup>
+  		
+		
+		<h:outputLabel value="R3:" />
+		
+		<h:panelGroup>		
+			
+		<h:inputText id="r3" size="10" value="#{resultadoBean.r3}"
+						 label="Terceiro numero sorteado" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="R3 é obrigatorio"/>					
+		
+		</h:panelGroup>
+  		
+  		
+  		<h:outputLabel value="R4:" />
+		
+		<h:panelGroup>		
+			
+		<h:inputText id="r4" size="10" value="#{resultadoBean.r4}"
+						 label="Quarto numero sorteado" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="R4 é obrigatorio"/>					
+		
+		</h:panelGroup>
+  		
+  		<h:outputLabel value="R5:" />
+		
+		<h:panelGroup>		
+			
+		<h:inputText id="r5" size="10" value="#{resultadoBean.r5}"
+						 label="Quinto numero sorteado" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="R5 é obrigatorio"/>					
+		
+		</h:panelGroup>
+  		
+  		
+  		<h:outputLabel value="R6:" />
+		
+		<h:panelGroup>		
+			
+		<h:inputText id="r6" size="10" value="#{resultadoBean.r6}"
+						 label="Sexto numero sorteado" 
+						 disabled="false"
+						 required="false"
+						 requiredMessage="R6 é obrigatorio"/>					
+		
+		</h:panelGroup>
+
+		<h:panelGroup>
+		
+  		<h:commandButton value="Alterar" 
+                   action="#{resultadoBean.executaAlteracao}" styleClass="botao"/>     <!-- Navigates to page-b.jsf -->
+  		<h:commandButton value="Excluir"
+                   action="#{resultadoBean.executaExclusao}"  styleClass="botao"/>  
+  		<h:commandButton value="Voltar" 
+                   action="page-list" styleClass="botao"/>  
+                   
+        </h:panelGroup>
+        
+    </h:panelGrid>                                             
+</h:form>
+
+</div></h:body></html>
